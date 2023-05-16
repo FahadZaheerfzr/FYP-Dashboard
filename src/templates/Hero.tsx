@@ -1,34 +1,32 @@
 import Image from 'next/image';
 
-import { Logo } from './Logo';
 import { Background } from '../background/Background';
 import { HeroOneButton } from '../hero/HeroOneButton';
 import { Section } from '../layout/Section';
-import Typewriter from 'typewriter-effect';
+import { Logo } from './Logo';
 
 type Props = {
-  aboutRef: React.RefObject<HTMLDivElement>;
-  scopeRef: React.RefObject<HTMLDivElement>;
   appRef: React.RefObject<HTMLDivElement>;
+  scopeRef: React.RefObject<HTMLDivElement>;
   toolRef: React.RefObject<HTMLDivElement>;
 }
 
-const Hero = ({ aboutRef, scopeRef, appRef, toolRef }: Props) => {
+const Hero = ({  scopeRef, appRef, toolRef }: Props) => {
 
   const handleScrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
     ref.current?.scrollIntoView({ behavior: 'smooth' });
   }
 
   return (
-    <Background color="bg-gray-900 h-screen">
+    <Background color=" h-screen bg-gray-900 ">
+
       <Section yPadding="py-6">
-        <nav className="flex justify-between items-center max-w-6xl mx-auto">
+        <nav className="flex justify-between items-center max-w-7xl mx-auto">
           <Logo xl />
 
           <div className="hidden md:flex space-x-8">
-            <button className="text-white font-medium" onClick={() => handleScrollToSection(aboutRef)}>About</button>
-            <button className="text-white font-medium" onClick={() => handleScrollToSection(scopeRef)}>Scope</button>
             <button className="text-white font-medium" onClick={() => handleScrollToSection(appRef)}>Applications</button>
+            <button className="text-white font-medium" onClick={() => handleScrollToSection(scopeRef)}>Scope</button>
             <button className="text-white font-medium" onClick={() => handleScrollToSection(toolRef)}>Tools</button>
           </div>
 
@@ -42,18 +40,21 @@ const Hero = ({ aboutRef, scopeRef, appRef, toolRef }: Props) => {
         </nav>
       </Section>
 
-      <Section yPadding="pt-20 pb-32">
-        <div className="flex justify-center">
-          <div className="animate-spin-slow ">
-            <Image src="/images/logo.png" width={120} height={80} />
-          </div>
+      <Section yPadding="pt-10 pb-32 h-screen" flex={true}>
+        <div className='w-1/2'>
+          <HeroOneButton
+            title="Automatic Modulation Classification"
+            description="Automated Modulation Classification (AMC) is used to identify the type of modulation received in wireless communication systems. This process improves spectrum utilization and is used in various scenarios, such as electronic warfare and civil monitoring. In a project, the implementation of a Deep Learning-based modulation classifier is planned due to the reliability and accuracy expected, especially in low signal-to-noise ratios (SNR). However, challenges such as discriminating higher-order modulations like FSK and m-QAM exist within AMC."
+          />
         </div>
-        <HeroOneButton
-          title="Automatic Modulation Classification"
-          description="The AMC system is designed to automatically classify signals into various modulation types such 
-          as amplitude modulation (AM), frequency modulation (FM), or phase modulation (PM)."
-        />
+
+        <div className='w-1/2 h-full flex justify-center items-center'>
+          <Image className='animate' src="/assets/images/signals.png" alt="hero" width={500} height={500} />
+        </div>
       </Section>
+
+
+
     </Background>
   );
 };

@@ -6,28 +6,33 @@ type ISectionProps = {
   description?: string;
   yPadding?: string;
   children?: ReactNode;
+  typeWriter?: boolean;
+  class?: string;
+  flex?: boolean;
 };
 
 const Section = (props: ISectionProps) => (
   <div
-    className={`max-w-screen-lg mx-auto px-3 ${
-      props.yPadding ? props.yPadding : "py-16"
-    }`}
+    className={`max-w-screen-xl mx-auto px-0 ${props.yPadding ? props.yPadding : "py-16"
+      } ${props.flex ? "flex" : ""}`}
   >
     {(props.title || props.description) && (
-      <div className="mb-12 text-center">
+      <div className=" text-center">
         {props.title && (
-          <h2 className="text-4xl text-green-400 font-bold">
-            <Typewriter
-              options={{
-                strings: [props.title],
-                autoStart: true,
-                //change speed
-                delay: 100,
-                pauseFor: 100000,
-                loop: true,
-              }}
-            />
+          <h2 className={`text-4xl text-green-400 font-bold ${props.class}`}>
+            {props.typeWriter ?
+              <Typewriter
+                options={{
+                  strings: [props.title],
+                  autoStart: true,
+                  //change speed
+                  delay: 100,
+                  pauseFor: 100000,
+                  loop: true,
+                }} /> :
+              props.title
+            }
+
           </h2>
         )}
         {props.description && (

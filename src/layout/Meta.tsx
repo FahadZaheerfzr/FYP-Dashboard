@@ -31,19 +31,19 @@ const Meta = (props: IMetaProps) => {
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href={`${router.basePath}/favicon-32x32.png`}
+          href={`${router.basePath}/images/logo.png`}
           key="icon32"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href={`${router.basePath}/favicon-16x16.png`}
+          href={`${router.basePath}/images/logo.png`}
           key="icon16"
         />
         <link
           rel="icon"
-          href={`${router.basePath}/favicon.ico`}
+          href={`${router.basePath}/images/logo.png4`}
           key="favicon"
         />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>

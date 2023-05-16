@@ -46,7 +46,7 @@ const VerticalFeatureRow = (props: IVerticalFeatureRowProps) => {
 
   return (
     <div className={verticalFeatureClass} ref={imageRef}>
-      <div className="w-full sm:w-1/2 text-center sm:px-6">
+      <div className="w-full sm:w-1/2 text-left text-justify sm:px-6">
         {props.title && (
           <h3 className="text-3xl text-gray-600 font-semibold">
             {props.title}

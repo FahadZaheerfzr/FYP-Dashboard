@@ -13,7 +13,7 @@ type ToolsProps = {
 const Tools = ({ title, forwardRef, ref }: ToolsProps) => (
   <div ref={forwardRef || ref}>
     <Section title={title} yPadding="py-20">
-      <div className="flex flex-wrap justify-center">
+      <div className="flex flex-wrap justify-center mt-20">
         <Tool title="Python" Icon={FaPython} />
         <Tool title="Pandas" Icon={FaDatabase} />
         <Tool title="AWS" Icon={FaAws} />

@@ -13,11 +13,11 @@ type scopeProps = {
 
 const Scope = ({ title, forwardRef, ref, list }: scopeProps) => {
   return (
-    <div ref={forwardRef || ref} className="h-screen">
-      <Section title={title}></Section>
-      <ul className="flex flex-col items-center justify-center w-full  mx-auto space-y-2 text-xl p-10">
+    <div ref={forwardRef || ref} className="h-full">
+      <Section  title={title}></Section>
+      <ul className="flex flex-col items-start justify-start w-full  mx-auto space-y-2 text-xl px-10">
         {list?.map((item, index) => (
-          <li key={index} className="flex items-start py-2 space-x-2">
+          <li key={index} className="flex items-start py-2 ml-10 space-x-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="w-5 h-5 mt-1 text-green-500"
@@ -30,17 +30,8 @@ const Scope = ({ title, forwardRef, ref, list }: scopeProps) => {
                 clipRule="evenodd"
               />
             </svg>
-            <span className="text-gray-400">
-              <Typewriter
-                options={{
-                  strings: [item],
-                  autoStart: true,
-                  //change speed
-                  delay: 70,
-                  pauseFor: 100000,
-                  loop: true,
-                }}
-              />
+            <span className="text-gray-200 text-2xl">
+              {item}
             </span>
           </li>
         ))}

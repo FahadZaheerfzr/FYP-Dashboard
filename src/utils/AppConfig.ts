@@ -1,6 +1,6 @@
 export const AppConfig = {
-  site_name: 'FYP',
-  title: 'Fahad FYP',
-  description: 'FYP for fahadzhr',
+  site_name: 'AMC',
+  title: 'Automatic Modulation Classification',
+  description: 'Automatic Modulation Classification', 
   locale: 'en',
 };
